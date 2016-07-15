@@ -7,8 +7,8 @@
     }
 
  function editor(){
-      $('#info').froalaEditor(); 
-      $('#muestraInfo').froalaEditor();
+      $('#info').htmlarea(); 
+      $('#muestraInfo').htmlarea();
 
   };editor();
 
@@ -407,7 +407,7 @@ $("#btn_GuardarNoticia").click(function(e){
     {
       $("#" + array[i]).val("");
     }
-    $('#info').froalaEditor('html.set', '');
+    $('#info').htmlarea('html', '');
   }
 
   function dibujaNoticia(data){
@@ -418,7 +418,7 @@ $("#btn_GuardarNoticia").click(function(e){
     $("#muestraTitulo").val(data.info.titulo);
     $("#muestraCategoria").val(data.info.categoria.nombre);
     $("#muestraFecha").val(data.info.fecha);
-    $('#muestraInfo').froalaEditor('html.set', data.info.informacion);
+    $('#muestraInfo').htmlarea('html', data.info.informacion);
     //$("#muestraInfo").val(data.info.informacion);
     $("#idNoticia").text(data.info._id);
     disabledNoticia(true);
